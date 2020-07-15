@@ -1,4 +1,7 @@
-FROM mltooling/ml-workspace-minimal:0.9.1
+# we are re building the base container from the mltooling/ml-workspace-minimal:0.9.1 Dockerfile on GitHub
+# to ensure that we know exactly what is in it 
+
+FROM cyversevice/ml-workspace-minimal:0.9.1
 
 # Install a few dependencies for iCommands, text editing, and monitoring instances
 RUN apt-get update && apt-get install -y \
