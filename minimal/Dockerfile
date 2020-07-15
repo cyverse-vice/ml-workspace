@@ -28,7 +28,7 @@ RUN chown -R jovyan:jovyan /home/jovyan
 USER jovyan
 WORKDIR /home/jovyan    
 
-COPY entry.sh /bin
 RUN mkdir -p /home/jovyan/.irods
+COPY irods_environment.json /home/jovyan/.irods/irods_environment.json
 
-ENTRYPOINT ["bash", "/bin/entry.sh"]
+# ENTRYPOINT is set in mltooling/ml-workspace-minimal:0.9.1 container
