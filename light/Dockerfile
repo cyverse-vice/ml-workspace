@@ -1,7 +1,7 @@
 # we are re building the base container from the mltooling/ml-workspace-minimal:0.9.1 Dockerfile on GitHub
 # to ensure that we know exactly what is in it 
 
-FROM cyversevice/ml-workspace-minimal:0.9.1
+FROM cyversevice/ml-workspace-light:0.9.1
 
 USER root
 
