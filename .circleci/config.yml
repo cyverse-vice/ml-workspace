@@ -8,10 +8,10 @@ workflows:
   build-docker-image-only:
     jobs:
       - docker/publish:
-          image: cyversevice/ml-workspace:minimal
-      - docker/publish:
-          image: cyversevice/ml-workspace:light
-      - docker/publish:
-          image: cyversevice/ml-workspace:r
-      - docker/publish:
-          image: cyversevice/ml-workspace:gpu
+          image: cyversevice/ml-workspace
+      # - docker/publish:
+      #     image: cyversevice/ml-workspace:light
+      # - docker/publish:
+      #     image: cyversevice/ml-workspace:r
+      # - docker/publish:
+      #     image: cyversevice/ml-workspace:gpu
