@@ -23,5 +23,5 @@ jobs:
       - image: cyversevice/ml-workspace:minimal # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: dockcer build -t "cyversevice/ml-workspace:minimal .
+      - run: dockcer build -t cyversevice/ml-workspace:minimal .
       
