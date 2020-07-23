@@ -17,14 +17,14 @@
 #           image: cyversevice/ml-workspace:gpu
 
 version: 2.1
-  jobs:
-    build:
-      docker:
-        - image: cyversevice/ml-workspace:minimal
+jobs:
+  build:
+    docker:
+      - image: cyversevice/ml-workspace:minimal
 
 workflows:
-  build_and_test:
-    jobs:
-      - build
-      - test
+build_and_test:
+  jobs:
+    - build
+    - test
       
