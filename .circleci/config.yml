@@ -5,6 +5,7 @@ jobs:
     docker: 
       - image: cyversevice/ml-tooling:minimal
         auth: 
-          username: DOCKER_LOGIN
+          username: $DOCKER_LOGIN
+          password: $DOCKER_PASSWORD
     steps:
       - checkout
