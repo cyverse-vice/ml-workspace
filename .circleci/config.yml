@@ -11,6 +11,7 @@ jobs:
       - checkout
       - setup_remote_docker
       - run: docker build -t cyversevice/ml-workspace:gpu -f GPU/Dockerfile .
+      - run: docker images
       - run: docker run cyversevice/ml-workspace:gpu -h
       - run: docker build -t cyversevice/ml-workspace:light -f light/Dockerfile .
       - run: docker run cyversevice/ml-workspace:light -h
