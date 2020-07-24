@@ -11,21 +11,10 @@ jobs:
       - checkout
       - setup_remote_docker
       - run: docker build -t cyversevice/ml-workspace:gpu -f GPU/Dockerfile .
-      - run: docker images
-      - run: docker run cyversevice/ml-workspace:gpu -h
+      - run: docker run -d cyversevice/ml-workspace:gpu
       - run: docker build -t cyversevice/ml-workspace:light -f light/Dockerfile .
-      - run: docker run cyversevice/ml-workspace:light -h
+      - run: docker run -d cyversevice/ml-workspace:light
       - run: docker build -t cyversevice/ml-workspace:minimal -f minimal/Dockerfile .
-      - run: docker run cyversevice/ml-workspace:minimal -h
+      - run: docker run -d cyversevice/ml-workspace:minimal
       - run: docker build -t cyversevice/ml-workspace:r -f R/Dockerfile .
-      - run: docker run cyversevice/ml-workspace:r -h
-
-# orbs:
-#   docker: circleci/docker@1.3.0
-# version: 2.1
-# workflows:
-#   build-docker-image-only:
-#     jobs:
-#       - docker/publish:
-#           image: cyversevice/ml-tooling:light
-  
+      - run: docker run -d cyversevice/ml-workspace:r
