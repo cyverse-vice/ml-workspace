@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
     nodejs \
     python-requests \
     software-properties-common \
-    vim
+    vim 
 
 # Install iCommands
 RUN wget -qO - https://packages.irods.org/irods-signing-key.asc | apt-key add - \
