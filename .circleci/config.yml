@@ -8,11 +8,10 @@ workflows:
   build-docker-image-only:
     jobs:
       - docker/publish:
-          image: cyversevice/ml-workspace:minimal
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
       - docker/publish:
           image: cyversevice/ml-workspace:light
       - docker/publish:
           image: cyversevice/ml-workspace:r
       - docker/publish:
           image: cyversevice/ml-workspace:gpu
-
