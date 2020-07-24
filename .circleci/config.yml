@@ -10,30 +10,30 @@ jobs:
       - run:
           name: Build Docker image
           command: docker build -t cyversevice/ml-workspace:light .
-    docker: 
-      - image: cyversevice/ml-workspace:minimal
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: Build Docker image
-          command: docker build -t cyversevice/ml-workspace:minimal .
-    docker: 
-      - image: cyversevice/ml-workspace:r
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: Build Docker image
-          command: docker build -t cyversevice/ml-workspace:r .
-    docker: 
-      - image: cyversevice/ml-workspace:gpu
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: Build Docker image
-          command: docker build -t cyversevice/ml-workspace:gpu .
+    # docker: 
+    #   - image: cyversevice/ml-workspace:minimal
+    # steps:
+    #   - checkout
+    #   - setup_remote_docker
+    #   - run:
+    #       name: Build Docker image
+    #       command: docker build -t cyversevice/ml-workspace:minimal .
+    # docker: 
+    #   - image: cyversevice/ml-workspace:r
+    # steps:
+    #   - checkout
+    #   - setup_remote_docker
+    #   - run:
+    #       name: Build Docker image
+    #       command: docker build -t cyversevice/ml-workspace:r .
+    # docker: 
+    #   - image: cyversevice/ml-workspace:gpu
+    # steps:
+    #   - checkout
+    #   - setup_remote_docker
+    #   - run:
+    #       name: Build Docker image
+    #       command: docker build -t cyversevice/ml-workspace:gpu .
 
 
 # orbs:
