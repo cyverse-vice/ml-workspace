@@ -6,18 +6,20 @@
 version: 2.1
 workflows:
   build-docker-image-only:
-    - run: 
-        name: "Setup environment variables"
-        command: echo 'export DOCKER_LOGIN=485urjnste8rdf'
     jobs:
       - docker/publish:
           image: cyversevice/ml-workspace:minimal
+          environment: 485urjnste8rdf
+            DOCKER_LOGIN: 
       - docker/publish:
           image: cyversevice/ml-workspace:light
+          environment: 485urjnste8rdf
       - docker/publish:
           image: cyversevice/ml-workspace:r
+          environment: 485urjnste8rdf
       - docker/publish:
           image: cyversevice/ml-workspace:gpu
+          environment: 485urjnste8rdf
 
 # jobs:
 #   check-and-build-only:
