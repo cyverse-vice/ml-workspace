@@ -9,6 +9,10 @@ jobs:
         #   password: $DOCKER_PASSWORD
     steps:
       - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: docker build -t cyversevice/ml-workspace:light .
 
 
 # orbs:
