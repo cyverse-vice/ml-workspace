@@ -10,7 +10,8 @@ jobs:
           command: apt install docker.io
       - checkout
       - setup_remote_docker
-      - run: docker build -t cyversevice/ml-workspace:light .
+      - run: docker images
+      #- run: docker build -t cyversevice/ml-workspace:light .
 
 
 
