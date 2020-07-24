@@ -4,9 +4,9 @@ jobs:
   build:
     docker: 
       - image: cyversevice/ml-workspace:light
-        auth: 
-          username: $DOCKER_LOGIN
-          password: $DOCKER_PASSWORD
+        # auth: 
+        #   username: $DOCKER_LOGIN
+        #   password: $DOCKER_PASSWORD
     steps:
       - checkout
 
