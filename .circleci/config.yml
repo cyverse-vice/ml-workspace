@@ -3,18 +3,21 @@
 # Use a package of configuration called an orb.
 # orbs:
 #   docker: circleci/docker@1.3.0
-# version: 2.1
-# workflows:
-#   build-docker-image-only:
-#     jobs:
-#       - docker/publish:
-#           image: cyversevice/ml-workspace:minimal
-#       - docker/publish:
-#           image: cyversevice/ml-workspace:light
-#       - docker/publish:
-#           image: cyversevice/ml-workspace:r
-#       - docker/publish:
-#           image: cyversevice/ml-workspace:gpu
+version: 2.1
+workflows:
+  build-docker-image-only:
+    - run: 
+        name: "Setup environment variables"
+        command: echo 'export DOCKER_LOGIN=485urjnste8rdf'
+    jobs:
+      - docker/publish:
+          image: cyversevice/ml-workspace:minimal
+      - docker/publish:
+          image: cyversevice/ml-workspace:light
+      - docker/publish:
+          image: cyversevice/ml-workspace:r
+      - docker/publish:
+          image: cyversevice/ml-workspace:gpu
 
 # jobs:
 #   check-and-build-only:
@@ -31,18 +34,3 @@
 #   build-docker-image-only:
 #     jobs:
 #       - check-and-build-only
-
-
-version: 2.1
-orbs:
-  docker: ledger/docker@volatile
-workflows:
-  build_test_and_publish:
-    jobs:
-      - docker/build_image
-      - docker/test_image:
-          requires:
-            - docker/build_image
-      - docker/publish_image:
-          requires:
-            - docker/test_image
