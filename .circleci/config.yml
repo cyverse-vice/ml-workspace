@@ -3,4 +3,6 @@ version: 2.1
 jobs:
   build:
     docker: 
-      - image: cyversevice/ml-tooling
+      - image: cyversevice/ml-tooling:minimal
+    steps:
+      - checkout
