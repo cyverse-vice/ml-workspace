@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker: 
-      - image: cyversevice/ml-workspace
+      - image: cyversevice/ml-workspace:light
         auth: 
           username: $DOCKER_LOGIN
           password: $DOCKER_PASSWORD
