@@ -23,7 +23,7 @@ jobs:
       - checkout
       - docker/check
       - docker/build:
-          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME:minimal
 orbs:
   docker: circleci/docker@1.3.0
 version: 2.1
