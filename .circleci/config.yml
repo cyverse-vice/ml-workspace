@@ -4,35 +4,31 @@
 # orbs:
 #   docker: circleci/docker@1.3.0
 version: 2.1
-workflows:
-  build-docker-image-only:
-    jobs:
-      - docker/publish:
-          image: cyversevice/ml-workspace:minimal
-          environment: 485urjnste8rdf
-            DOCKER_LOGIN: 
-      - docker/publish:
-          image: cyversevice/ml-workspace:light
-          environment: 485urjnste8rdf
-      - docker/publish:
-          image: cyversevice/ml-workspace:r
-          environment: 485urjnste8rdf
-      - docker/publish:
-          image: cyversevice/ml-workspace:gpu
-          environment: 485urjnste8rdf
-
-# jobs:
-#   check-and-build-only:
-#     executor: docker/machine
-#     steps:
-#       - checkout
-#       - docker/check
-#       - docker/build:
-#           image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME:minimal
-# orbs:
-#   docker: circleci/docker@1.3.0
-# version: 2.1
 # workflows:
 #   build-docker-image-only:
 #     jobs:
-#       - check-and-build-only
+#       - docker/publish:
+#           image: cyversevice/ml-workspace:minimal
+#           environment: 485urjnste8rdf
+#             DOCKER_LOGIN: 
+#       - docker/publish:
+#           image: cyversevice/ml-workspace:light
+#           environment: 485urjnste8rdf
+#       - docker/publish:
+#           image: cyversevice/ml-workspace:r
+#           environment: 485urjnste8rdf
+#       - docker/publish:
+#           image: cyversevice/ml-workspace:gpu
+#           environment: 485urjnste8rdf
+
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: cyversevice/ml-workspace:minimal
+        environment:
+          DOCKER_LOGIN: 485urjnste8rdf
+      - image: cyversevice:ml-workspace:light
+        environment:
+          DOCKER_LOGIN: 485urjnste8rdf
