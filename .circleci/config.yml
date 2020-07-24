@@ -3,7 +3,7 @@
 # Use a package of configuration called an orb.
 # orbs:
 #   docker: circleci/docker@1.3.0
-version: 2.1
+#version: 2.1
 # workflows:
 #   build-docker-image-only:
 #     jobs:
