@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker: 
-      - image: cyversevice/ml-tooling:minimal
+      - image: test_image:first
         auth: 
           username: $DOCKER_LOGIN
           password: $DOCKER_PASSWORD
