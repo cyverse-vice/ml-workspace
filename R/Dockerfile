@@ -1,7 +1,7 @@
 # we are re building the base container from the mltooling/ml-workspace-minimal:0.9.1 Dockerfile on GitHub
 # to ensure that we know exactly what is in it 
 
-FROM cyversevice/ml-workspace-minimal:0.9.1
+FROM cyversevice/ml-workspace-r:0.9.1
 
 USER root
 
@@ -20,13 +20,13 @@ RUN apt-get update && apt-get install -y \
     nodejs \
     python-requests \
     software-properties-common \
-    vim 
+    vim
 
 # Install iCommands
 RUN wget -qO - https://packages.irods.org/irods-signing-key.asc | apt-key add - \
     && echo "deb [arch=amd64] https://packages.irods.org/apt/ bionic main" | tee /etc/apt/sources.list.d/renci-irods.list \
     && apt-get update && apt-get install -y irods-runtime irods-icommands
    
-COPY minimal/irods_environment.json /home/jovyan/.irods/irods_environment.json
+COPY R/irods_environment.json /home/jovyan/.irods/irods_environment.json
 
 # ENTRYPOINT is set in mltooling/ml-workspace-minimal:0.9.1 container
