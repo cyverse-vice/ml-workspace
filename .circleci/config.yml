@@ -10,11 +10,11 @@ jobs:
           command: apt install docker.io
       - checkout
       - setup_remote_docker
-      - run: docker build -t cyversevice/ml-workspace:gpu -f GPU/Dockerfile .
-      - run: docker run -d cyversevice/ml-workspace:gpu
-      - run: docker build -t cyversevice/ml-workspace:light -f light/Dockerfile .
-      - run: docker run -d cyversevice/ml-workspace:light
-      - run: docker build -t cyversevice/ml-workspace:minimal -f minimal/Dockerfile .
-      - run: docker run -d cyversevice/ml-workspace:minimal
-      - run: docker build -t cyversevice/ml-workspace:r -f R/Dockerfile .
-      - run: docker run -d cyversevice/ml-workspace:r
+      - run: docker build -t cyversevice/ml-workspace-gpu:0.9.1 -f GPU/Dockerfile .
+      - run: docker run -d cyversevice/ml-workspace-gpu:0.9.1
+      - run: docker build -t cyversevice/ml-workspace-light:0.9.1 -f light/Dockerfile .
+      - run: docker run -d cyversevice/ml-workspace-light:0.9.1
+      - run: docker build -t cyversevice/ml-workspace-minimal:0.9.1 -f minimal/Dockerfile .
+      - run: docker run -d cyversevice/ml-workspace-minimal:0.9.1
+      - run: docker build -t cyversevice/ml-workspace-r:0.9.1 -f R/Dockerfile .
+      - run: docker run -d cyversevice/ml-workspace-r:0.9.1
