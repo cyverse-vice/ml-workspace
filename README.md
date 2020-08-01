@@ -2,7 +2,7 @@
 
 # ml-workspace
 
-Ml-workspace base image built upon [Mltooling's project](https://hub.docker.com/r/mltooling/ml-workspace) for [Cyverse](https://cyverse-visual-interactive-computing-environment.readthedocs-hosted.com/en/latest/index.html). Ml-tooling's base Jupyter image requires additional configuration files for it to fully exploit CyVerse iRODS data store.
+This `ml-workspace` base image is built upon [Ml-tooling's project](https://hub.docker.com/r/mltooling/ml-workspace) for [CyVerse](https://cyverse-visual-interactive-computing-environment.readthedocs-hosted.com/en/latest/index.html). Ml-tooling's base Jupyter image requires additional configuration files for it to fully exploit CyVerse iRODS data store.
 
 [![CircleCI](https://circleci.com/gh/cyverse-vice/ml-workspace.svg?style=svg)](https://circleci.com/gh/cyverse-vice/ml-workspace) [![DockerHub](https://img.shields.io/badge/DockerHub-brightgreen.svg?style=popout&logo=Docker)](https://hub.docker.com/r/cyversevice/ml-workspace)
 
@@ -15,8 +15,7 @@ quick launch | tag | size | metrics | build |
 
 # Instructions
 
-
-## Run Docker locally or on a Virtual Machine
+## Run Docker container locally or on a Virtual Machine
 
 To run ml-tooling, you must first `pull` from DockerHub, or activate a [CyVerse Account](https://user.cyverse.org/services/mine) and launch in the Discovery Environment VICE.
 
@@ -24,29 +23,29 @@ The container for running ml-tooling is hosted on DockerHub and can be started l
 
 
 ```
-docker pull cyversevice/ml-tooling:latest
+docker pull cyversevice/ml-workspace:latest
 ```
 
 ```
-docker run -it --rm -d cyversevice/ml-tooling:latest
+docker run -it --rm -d cyversevice/ml-workspace:latest
 ```
 
 Run with NVIDIA GPU
 
 ```
-docker run --gpus all -it --rm -d -e NVIDIA_DRIVER_CAPABILITIES=all cyversevice/ml-tooling:latest
+docker run --gpus all -it --rm -d -e NVIDIA_DRIVER_CAPABILITIES=all cyversevice/ml-workspace:latest
 ```
 
 ## Run Docker container in CyVerse VICE
 
 Unless you plan on making changes to this container, you should just use the existing launch button above.
 
-You can build a new Docker container with additional dependencies from this Docker Hub image by using the `FROM cyversevice/ml-tooling:latest` at the beginning of your own Dockerfile.
+You can build a new Docker container with additional dependencies from this Docker Hub image by using the `FROM cyversevice/ml-workspace:latest` at the beginning of your own Dockerfile.
 
 ###### Developer notes
 
 To test the container locally:
 
 ```
-docker run -it --rm -v /$HOME:/app --workdir /app -p 8888:8888 -e REDIRECT_URL=http://localhost:8888 cyversevice/ml-tooling:latest
+docker run -it --rm -v /$HOME:/app --workdir /app -p 8888:8888 -e REDIRECT_URL=http://localhost:8888 cyversevice/ml-workspace:latest
 ```
