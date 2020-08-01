@@ -2,7 +2,7 @@
 
 # ml-workspace
 
-Ml-workspace base image built upon [Mltooling's project](https://hub.docker.com/r/mltooling/ml-workspace) for [Cyverse Vice](https://cyverse-visual-interactive-computing-environment.readthedocs-hosted.com/en/latest/index.html). Ml-tooling's base image requires a couple additional configuration files for it to be compatible with CyVerse Kubernetes orchestration and iRODS data store.
+Ml-workspace base image built upon [Mltooling's project](https://hub.docker.com/r/mltooling/ml-workspace) for [Cyverse](https://cyverse-visual-interactive-computing-environment.readthedocs-hosted.com/en/latest/index.html). Ml-tooling's base Jupyter image requires additional configuration files for it to fully exploit CyVerse iRODS data store.
 
 [![CircleCI](https://circleci.com/gh/cyverse-vice/ml-workspace.svg?style=svg)](https://circleci.com/gh/cyverse-vice/ml-workspace) [![DockerHub](https://img.shields.io/badge/DockerHub-brightgreen.svg?style=popout&logo=Docker)](https://hub.docker.com/r/cyversevice/ml-workspace)
 
@@ -29,6 +29,12 @@ docker pull cyversevice/ml-tooling:latest
 
 ```
 docker run -it --rm -d cyversevice/ml-tooling:latest
+```
+
+Run with NVIDIA GPU
+
+```
+docker run --gpus all -it --rm -d -e NVIDIA_DRIVER_CAPABILITIES=all cyversevice/ml-tooling:latest
 ```
 
 ## Run Docker container in CyVerse VICE
